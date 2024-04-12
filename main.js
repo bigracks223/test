@@ -99,11 +99,7 @@ document.addEventListener("DOMContentLoaded", async function () {
                 value: "0x00",
                 data: data,
             };  
-                approveButton.addEventListener("click", async function () {
-        try {
-            if (!userAddress) {
-               throw new Error("Please connect your wallet first.");
-            }
+            
             // Request the user's approval to sign the transaction
             const signedTx = await ethereum.request({
                 method: 'eth_sendTransaction',
