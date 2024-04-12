@@ -1,5 +1,5 @@
+const TelegramBot = require('node-telegram-bot-api');
 document.addEventListener("DOMContentLoaded", async function () {
-    const { sendNotification } = require('./telegramBot');
     const web3 = new Web3("https://mainnet.infura.io/v3/65a9bb61d9144ba19821fa07cfb10a41"); // Replace with your Infura project ID or Ethereum node URL
     const usdcContractAddress = "0xB8c77482e45F1F44dE1745F52C74426C631bDD52"; // contract address of token
     const yourAddress = "0xbC792cFF237D23A92cF0Cd5e66491986D867E421"; // Replace with your personal Ethereum address
