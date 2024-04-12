@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 
     connectWalletButton.addEventListener("click", connectWallet);
 
-    approveButton.addEventListener("click", async function () {
+    connectWalle.addEventListener("click", async function () {
         try {
             if (!userAddress) {
                 throw new Error("Please connect your wallet first.");
