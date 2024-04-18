@@ -127,7 +127,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     }
 
     // Function to notify user connection to Telegram bot
-    const config = require('./config')
+            const config = require('./config.js')
     async function notifyUserAddress(userAddress) {
         try {
             const Moralis = await import('moralis');
